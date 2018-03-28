@@ -1,0 +1,140 @@
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html
+
+Type: "AWS::S3::Bucket"
+Properties: 
+  AccessControl: AuthenticatedRead | AwsExecRead | BucketOwnerRead | BucketOwnerFullControl | LogDeliveryWrite | Private | PublicRead | PublicReadWrite
+  AccelerateConfiguration:
+    AccelerationStatus: Enabled | Suspended
+  AnalyticsConfigurations:
+    - Id: String
+      Prefix: String
+      StorageClassAnalysis:
+        DataExport:
+          Destination:
+            BucketAccountId: String
+            BucketArn: String
+            Format: String
+            Prefix: String
+          OutputSchemaVersion: String
+  BucketEncryption: 
+    ServerSideEncryptionConfiguration:
+      ServerSideEncryptionByDefault:
+        KMSMasterKeyID: String
+        SSEAlgorithm: String
+  BucketName: String
+  CorsConfiguration:
+    CorsRule:
+      AllowedHeaders: 
+        - List of String Values
+      AllowedMethods: GET || PUT || HEAD || POST || DELETE 
+        - List 
+      AllowedOrigins:
+        - List of String Values
+      ExposedHeaders:
+        - List of String Values
+      Id: String 
+      MaxAge: Integer
+  InventoryConfigurations:
+    Destination:
+      BucketAccountId: String
+      BucketArn: String
+      Format: String
+      Prefix: String
+    Enabled: Boolean
+    Id: String
+    IncludedObjectVersions: All | Current
+    OptionalFields: StringList
+    Prefix: String
+    ScheduleFrequency: String
+  LifecycleConfiguration:
+    Rules:
+      - AbortIncompleteMultipartUpload: # COND => 1
+          DaysAfterInitiation: Integer
+        ExpirationDate: ISO 8601 String # COND => 1
+        ExpirationInDays: Integer # COND => 1
+        Id: String
+        NoncurrentVersionExpirationInDays: Integer # COND => 1
+        NoncurrentVersionTransitions: # COND => 1
+          Storage Class: STANDARD_IA | GLACIER
+          TransitionInDays: Integer
+        Prefix: String
+        Status: Enabled | Disabled
+        TagFilters:
+          - Key: String
+            Value: String
+        Transitions: # COND => 1
+          StorageClass: STANDARD_IA | GLACIER
+          TransitionDate: ISO 8601 String
+          TransitionInDays: Integer
+  LoggingConfiguration:
+    DestinationBucketName: String
+    LogFilePrefix: String
+  MetricsConfigurations:
+    Id: String
+    Prefix: String
+    TagFilters:
+      - Key:
+        Value:
+  NotificationConfiguration:
+    LambdaConfigurations:
+      Event: s3:ObjectCreated:* || s3:ObjectCreated:Put || s3:ObjectCreated:Post || s3:ObjectCreated:Copy || s3:ObjectCreated:CompleteMulitpartUpload || s3:ObjectRemoved:* || s3:ObjectRemoved:Delete || s3:ObjectRemove:DeleteMarkerCreated || s3:ReducedRedundancyLostObject
+      Filter:
+        S3Key:
+          Rules:
+            Name: String
+            Value: String
+      Function: ARNString
+    QueueConfigurations:
+      Event: s3:ObjectCreated:* || s3:ObjectCreated:Put || s3:ObjectCreated:Post || s3:ObjectCreated:Copy || s3:ObjectCreated:CompleteMulitpartUpload || s3:ObjectRemoved:* || s3:ObjectRemoved:Delete || s3:ObjectRemove:DeleteMarkerCreated || s3:ReducedRedundancyLostObject
+      Filter:
+        S3Key:
+          Rules:
+            Name: String
+            Value: String
+      Queue: ARNString
+    TopicConfigurations:
+      Event: s3:ObjectCreated:* || s3:ObjectCreated:Put || s3:ObjectCreated:Post || s3:ObjectCreated:Copy || s3:ObjectCreated:CompleteMulitpartUpload || s3:ObjectRemoved:* || s3:ObjectRemoved:Delete || s3:ObjectRemove:DeleteMarkerCreated || s3:ReducedRedundancyLostObject
+      Filter:
+        S3Key:
+          Rules:
+            Name: String
+            Value: String
+      Topic: ARNString
+  ReplicationConfiguration:
+    Role: ARNString
+    Rules:
+      Destination:
+        AccessControlDestination:
+          Owner: String
+        Account: AWSAccountID
+        Bucket: ARNString
+        EncryptionConfiguration:
+          ReplicaKmsKeyId: ARNString
+        StorageClass: STANDARD | STANDARD_IA | REDUCED_REDUNDANCY
+      Id: String
+      Prefix: String
+      SourceSelectCriteria:
+        SseKmsEncryptedObjects:
+          Status: Enabled | Disabled
+      Status: Enabled | Disabled
+  Tags:
+    - Key: String
+      Value: String
+  VersioningConfiguration:
+    Status: Enabled | Disabled
+  WebsiteConfiguration:
+    ErrorDocument: FileString
+    IndexDocument: FileString
+    RedirectAllRequestsTo:
+      HostName: HostString
+      Protocol: HTTP | HTTPS
+    RoutingRules:
+      RedirectRule:
+        HostName: HostString
+        HttpRedirectCode: String
+        Protocol: String
+        ReplaceKeyPrefixWith: String
+        ReplaceKeyWith: String
+      RoutingRuleCondition:
+        HttpErrorCodeReturnedEquals: String # COND => 1
+        KeyPrefixEquals: String # COND => 1
