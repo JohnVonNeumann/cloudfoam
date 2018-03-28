@@ -4,7 +4,7 @@ Like many things, sometimes we become useful enough to know how to use something
 It's basically scooping the foam from the top.
 
 ## How to read the templates:
-* Type is not listed as String if the input is limited to a range of choices, for example, in `AWS::S3::Bucket`, AccessControl can only be one of a finite selection, therefore, it is not listed as a `String Type` because the user does not have full control. If you see `(String)` listed on a resource attribute, you can safely assume that you as a user have full control over the input.
+
 
 #### Conditionals
 * Some attributes/resources have conditional elements, for example, `AWS::S3::Bucket::LifecycleConfiguration::Rules` requires that `one of more` of the attributes have been selected. In these instances, you will see comments such as:
@@ -12,6 +12,11 @@ It's basically scooping the foam from the top.
         # COND => 1
 
 * Which indicates that inside the attribute block, you must follow the `n rule` given, and select `n` of the attributes for CF to accept your template as valid. 
+
+#### Data Types
+* Type is not listed as String if the input is limited to a range of choices, for example, in `AWS::S3::Bucket`, AccessControl can only be one of a finite selection, therefore, it is not listed as a `String Type` because the user does not have full control. If you see `(String)` listed on a resource attribute, you can safely assume that you as a user have full control over the input.
+
+* Much like the above situation, you will find `ARNString` throughout the templates, I have included this when the `String` can only be accepted when it is in the form of an `AmazonResourceNumber`, hopefully providing more of a separation between what you have control over, and what you don't. 
 
 ## Contributing
 * See an error? Feel free to create a PR!
