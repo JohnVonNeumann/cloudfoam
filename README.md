@@ -6,8 +6,15 @@ It's basically scooping the foam from the top.
 ## How to read the templates:
 * Type is not listed as String if the input is limited to a range of choices, for example, in `AWS::S3::Bucket`, AccessControl can only be one of a finite selection, therefore, it is not listed as a `String Type` because the user does not have full control. If you see `(String)` listed on a resource attribute, you can safely assume that you as a user have full control over the input.
 
+#### Conditionals
+* Some attributes/resources have conditional elements, for example, `AWS::S3::Bucket::LifecycleConfiguration::Rules` requires that `one of more` of the attributes have been selected. In these instances, you will see comments such as:
+
+        # COND => 1
+
+* Which indicates that inside the attribute block, you must follow the `n rule` given, and select `n` of the attributes for CF to accept your template as valid. 
+
 ## Contributing
-* See an error? Feel free to create a PR! 
+* See an error? Feel free to create a PR!
 * Been working on a module recently and see it's not here? Feel free to create a PR!
 * Want to add something? Feel free to create a PR!
 * Have an issue? Ticket it up!
