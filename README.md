@@ -12,4 +12,12 @@ It's basically scooping the foam from the top.
 * Want to add something? Feel free to create a PR!
 * Have an issue? Ticket it up!
 
+## Gotchas when writing YAML
+* I've been caught out numerous times by syntaxing of `List` and `StringList | List of Strings` due to the fact that some resources and attributes require individual items and some required lists that are nested. For example, I've had moments where I've just used:
+
+        - List
+          And Continuing
+
+* And the second item hasn't been recognised, because you've created a `List`, not a list of lists. Which is what some things calls for. It all depends on the resource being called, which is why the Docs are always important.
+
 #### All resources have their original source linked to them inside the templates themselves, all content belong to their original authors. I'm merely trying to amalgamate the information in one place for people to easily consult it.
