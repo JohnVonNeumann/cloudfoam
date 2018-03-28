@@ -11,3 +11,5 @@ It's basically scooping the foam from the top.
 * Been working on a module recently and see it's not here? Feel free to create a PR!
 * Want to add something? Feel free to create a PR!
 * Have an issue? Ticket it up!
+
+#### All resources have their original source linked to them inside the templates themselves, all content belong to their original authors. I'm merely trying to amalgamate the information in one place for people to easily consult it.
