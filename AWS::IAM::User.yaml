@@ -1,0 +1,14 @@
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html
+
+Type: "AWS::IAM::User"
+Properties:
+  Groups:
+    - GroupNameString
+  LoginProfile:
+    Password: String
+    PasswordResetRequired: Boolean
+  ManagedPolicyArns:
+    - ARNString
+  Path: PathString
+  Policies: Consult docs for detailed Policy coverage.
+  UserName: String
