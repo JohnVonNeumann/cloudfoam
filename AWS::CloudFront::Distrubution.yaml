@@ -1,0 +1,233 @@
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
+
+Type: "AWS::CloudFront::Distribution"
+Properties:
+  DistributionConfig:
+    Aliases:
+      - List of String Values
+    CacheBehaviors:
+      AllowedMethods:
+        - GET
+          HEAD
+        # OR
+        - GET
+          HEAD
+          OPTIONS
+        # OR
+        - GET
+          HEAD
+          OPTIONS
+          PUT
+          PATCH
+          POST
+          DELETE
+      CachedMethods:
+        - GET
+          HEAD
+        # OR
+        - GET
+          HEAD
+          OPTIONS
+      Compress: Boolean
+      DefaultTTL: SecondsNumber
+      ForwardedValues:
+        Cookies:
+          Forward: none | all | whitelist
+          WhitelistedNames: # COND. REQ IF SPECIFIED whitelist FOR Forward
+            - List of String Values
+        Headers:
+          - Accept
+          - Accept-Charset
+          - Accept-Encoding
+          - Accept-Language
+          - Authorization
+          - Cache-Control
+          - CloudFront-Forwarded-Proto
+          - CloudFront-Is-Desktop-Viewer
+          - CloudFront-Is-Mobile-Viewer
+          - CloudFront-Is-Tablet-Viewer
+          - CloudFront-Viewer-Country
+          - Connection
+          - Content-Length
+          - Content-MD5
+          - Content-Type
+          - Cookie
+          - Date
+          - Expect
+          - From
+          - Host
+          - If-Match
+          - If-Modified-Since
+          - If-None-Match
+          - If-Range
+          - If-Unmodified-Since
+          - Max-Forwards
+          - Origin
+          - Pragma
+          - Proxy-Authenticate
+          - Proxy-Authorization
+          - Proxy-Connection
+          - Range
+          - Referer
+          - Request-Range
+          - TE
+          - Trailer
+          - Transfer-Encoding
+          - Upgrade
+          - User-Agent
+          - Via
+          - Warning
+          - X-Amz-Cf-Id
+          - X-Edge-*
+          - X-Forwarded-For
+          - X-Forwarded-Proto
+          - X-Real-IP
+        QueryString: Boolean
+        QueryStringCacheKeys:
+          - List of Key Value Strings
+      LambdaFunctionAssociations:
+        EventType: viewer-request | viewer-response | origin-request | origin-response
+        LambdaFunctionARN: ARNString
+      MaxTTL: SecondsNumber
+      MinTTL: SecondsNumber
+      PathPattern: PathString
+      SmoothStreaming: Boolean
+      TrustedSigners: List of String Values
+      TargetOriginId: IdString
+      ViewerProtocolPolicy: allow-all | redirect-to-https | https-only
+    Comment: String
+    CustomErrorResponses:
+      ErrorCachingMinTTL: SecondsNumber
+      ErrorCode: 400 | 403 | 404 | 405 | 414 | 500 | 501 | 502 | 503 | 504
+      ResponseCode: 200 | 400 | 403 | 404 | 405 | 414 | 500 | 501 | 502 | 503 | 504
+      ResponsePagePath: PathString
+    DefaultCacheBehavior:
+      AllowedMethods:
+        - GET
+          HEAD
+        # OR
+        - GET
+          HEAD
+          OPTIONS
+        # OR
+        - GET
+          HEAD
+          OPTIONS
+          PUT
+          PATCH
+          POST
+          DELETE
+      CachedMethods:
+        - GET
+          HEAD
+        # OR
+        - GET
+          HEAD
+          OPTIONS
+      Compress: Boolean
+      DefaultTTL: SecondsNumber
+      ForwardedValues:
+        Cookies:
+          Forward: none | all | whitelist
+          WhitelistedNames: # COND. REQ IF SPECIFIED whitelist FOR Forward
+            - List of String Values
+        Headers:
+          - Accept
+          - Accept-Charset
+          - Accept-Encoding
+          - Accept-Language
+          - Authorization
+          - Cache-Control
+          - CloudFront-Forwarded-Proto
+          - CloudFront-Is-Desktop-Viewer
+          - CloudFront-Is-Mobile-Viewer
+          - CloudFront-Is-Tablet-Viewer
+          - CloudFront-Viewer-Country
+          - Connection
+          - Content-Length
+          - Content-MD5
+          - Content-Type
+          - Cookie
+          - Date
+          - Expect
+          - From
+          - Host
+          - If-Match
+          - If-Modified-Since
+          - If-None-Match
+          - If-Range
+          - If-Unmodified-Since
+          - Max-Forwards
+          - Origin
+          - Pragma
+          - Proxy-Authenticate
+          - Proxy-Authorization
+          - Proxy-Connection
+          - Range
+          - Referer
+          - Request-Range
+          - TE
+          - Trailer
+          - Transfer-Encoding
+          - Upgrade
+          - User-Agent
+          - Via
+          - Warning
+          - X-Amz-Cf-Id
+          - X-Edge-*
+          - X-Forwarded-For
+          - X-Forwarded-Proto
+          - X-Real-IP
+        QueryString: Boolean
+        QueryStringCacheKeys:
+          - List of Key Value Strings
+      LambdaFunctionAssociations:
+        EventType: viewer-request | viewer-response | origin-request | origin-response
+        LambdaFunctionARN: ARNString
+      MaxTTL: SecondsNumber
+      MinTTL: SecondsNumber
+      SmoothStreaming: Boolean
+      TrustedSigners: List of String Values
+      TargetOriginId: IdString
+      ViewerProtocolPolicy: allow-all | redirect-to-https | https-only
+    DefaultRootObject: PathString
+    Enabled: Boolean
+    HttpVersion: http1.1 | http2
+    IPV6Enabled: Boolean
+    Logging:
+      Bucket: BucketString
+      IncludeCookies: Boolean
+      Prefix: String
+    Origins:
+      CustomOriginConfig:
+        HTTPPort: PortInteger
+        HTTPSPort: PortInteger
+        OriginKeepaliveTimeout: SecondsNumber
+        OriginProtocolPolicy: http-only | match-viewer | https-only
+        OriginReadTimeout: SecondsNumber
+        OriginSSLProtocols: TLSv1 | SSLv3
+      DomainName: DNSString
+      Id: String
+      OriginCustomHeaders:
+        HeaderName: String
+        HeaderValue: String
+      OriginPath: PathString
+      S3OriginConfig: 
+        OriginAccessIdentity: IdString
+    PriceClass: PriceClass_100 | PriceClass_200 | PriceClass_All
+    Restrictions:
+      GeoRestriction:
+        Locations:
+          - List of ISO 3166 Strings
+        RestrictionType: blacklist | whitelist | none
+    ViewerCertificate:
+      AcmCertificateArn: ArnString # COND == 1
+      CloudFrontDefaultCertificate: Boolean # COND == 1
+      IamCertificateId: IdString
+      MinimumProtocolVersion: SSLv3 | TLSv1 | TLSv1_2016 | TLSv1.1_2016 | TLSv1.2_2018
+      SslSupportMethod: sni-only | vip #REQ IF IamCertificateId OR AcmCertficateArn
+    WebACLId: IdString
+  Tags:
+    - List of Key Value Pairs
+# DistributionConfig::CacheBehaviors::ForwardedValues::Headers 
+# https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior
