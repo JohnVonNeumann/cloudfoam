@@ -1,0 +1,7 @@
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html
+
+Type: "AWS::IAM:AccessKey"
+Properties:
+  Serial: Integer
+  Status: Active | Inactive
+  UserName: UserString
