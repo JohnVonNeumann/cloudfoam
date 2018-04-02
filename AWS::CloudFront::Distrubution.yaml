@@ -212,7 +212,7 @@ Properties:
         HeaderName: String
         HeaderValue: String
       OriginPath: PathString
-      S3OriginConfig: 
+      S3OriginConfig:
         OriginAccessIdentity: IdString
     PriceClass: PriceClass_100 | PriceClass_200 | PriceClass_All
     Restrictions:
@@ -229,5 +229,5 @@ Properties:
     WebACLId: IdString
   Tags:
     - List of Key Value Pairs
-# DistributionConfig::CacheBehaviors::ForwardedValues::Headers 
+# DistributionConfig::CacheBehaviors::ForwardedValues::Headers
 # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior

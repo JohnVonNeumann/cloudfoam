@@ -1,7 +1,7 @@
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html
 
 Type: "AWS::S3::Bucket"
-Properties: 
+Properties:
   AccessControl: AuthenticatedRead | AwsExecRead | BucketOwnerRead | BucketOwnerFullControl | LogDeliveryWrite | Private | PublicRead | PublicReadWrite
   AccelerateConfiguration:
     AccelerationStatus: Enabled | Suspended
@@ -16,7 +16,7 @@ Properties:
             Format: String
             Prefix: String
           OutputSchemaVersion: String
-  BucketEncryption: 
+  BucketEncryption:
     ServerSideEncryptionConfiguration:
       ServerSideEncryptionByDefault:
         KMSMasterKeyID: String
@@ -24,15 +24,15 @@ Properties:
   BucketName: String
   CorsConfiguration:
     CorsRules:
-      AllowedHeaders: 
+      AllowedHeaders:
         - List of String Values
-      AllowedMethods: GET || PUT || HEAD || POST || DELETE 
-        - List 
+      AllowedMethods: GET || PUT || HEAD || POST || DELETE
+        - List
       AllowedOrigins:
         - List of String Values
       ExposedHeaders:
         - List of String Values
-      Id: String 
+      Id: String
       MaxAge: Integer
   InventoryConfigurations:
     Destination:
