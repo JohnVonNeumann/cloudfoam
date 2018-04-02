@@ -23,7 +23,7 @@ Properties:
         SSEAlgorithm: String
   BucketName: String
   CorsConfiguration:
-    CorsRule:
+    CorsRules:
       AllowedHeaders: 
         - List of String Values
       AllowedMethods: GET || PUT || HEAD || POST || DELETE 
