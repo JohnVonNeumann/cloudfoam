@@ -1,0 +1,13 @@
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html
+
+Type: "AWS::EC2::Subnet"
+Properties:
+  AssignIpv6AddressOnCreation: Boolean
+  AvailablityZone: AZString
+  CidrBlock: CIDRString
+  Ipv6CidrBlock: CIDRString
+  MapPublicIpOnLaunch: Boolean
+  Tags:
+    Key: String
+    Value: String
+  VpcId: IdString
