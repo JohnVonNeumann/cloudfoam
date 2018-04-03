@@ -195,7 +195,7 @@ Properties:
     HttpVersion: http1.1 | http2
     IPV6Enabled: Boolean
     Logging:
-      Bucket: BucketString
+      Bucket: DNSString
       IncludeCookies: Boolean
       Prefix: String
     Origins:
