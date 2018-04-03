@@ -199,21 +199,21 @@ Properties:
       IncludeCookies: Boolean
       Prefix: String
     Origins:
-      CustomOriginConfig:
-        HTTPPort: PortInteger
-        HTTPSPort: PortInteger
-        OriginKeepaliveTimeout: SecondsNumber
-        OriginProtocolPolicy: http-only | match-viewer | https-only
-        OriginReadTimeout: SecondsNumber
-        OriginSSLProtocols: TLSv1 | SSLv3
-      DomainName: DNSString
-      Id: String
-      OriginCustomHeaders:
-        HeaderName: String
-        HeaderValue: String
-      OriginPath: PathString
-      S3OriginConfig:
-        OriginAccessIdentity: IdString
+      - CustomOriginConfig: # COND == 1 
+          HTTPPort: PortInteger
+          HTTPSPort: PortInteger
+          OriginKeepaliveTimeout: SecondsNumber
+          OriginProtocolPolicy: http-only | match-viewer | https-only
+          OriginReadTimeout: SecondsNumber
+          OriginSSLProtocols: TLSv1 | SSLv3
+        DomainName: DNSString
+        Id: String
+        OriginCustomHeaders:
+          HeaderName: String
+          HeaderValue: String
+        OriginPath: PathString
+        S3OriginConfig:     # COND == 1
+          OriginAccessIdentity: IdString
     PriceClass: PriceClass_100 | PriceClass_200 | PriceClass_All
     Restrictions:
       GeoRestriction:
