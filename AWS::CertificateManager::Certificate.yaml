@@ -1,0 +1,11 @@
+Type: "AWS::CertificateManager::Certificate"
+Properties:
+  DomainName: DNSString
+  DomainValidationOptions:
+    DomainName: DNSString
+    ValidationDomain: DNSString
+  SubjectAlternativeNames:
+    - DNSString
+  Tags:
+    - Key: String
+      Value: String
