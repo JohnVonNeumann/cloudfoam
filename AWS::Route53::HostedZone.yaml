@@ -1,0 +1,13 @@
+Type: "AWS::Route53::HostedZone"
+Properties:
+  HostedZoneConfig:
+    Comment: String
+  HostedZoneTags:
+    - Key: String
+      Value: String
+  Name: DNSString
+  QueryLoggingConfig:
+    CloudWatchLogsLogGroupArn: ARNString
+  HostedZoneVPCs:
+    VPCId: IdString
+    VPCRegion: RegionString
