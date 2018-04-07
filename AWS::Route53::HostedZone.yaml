@@ -8,6 +8,6 @@ Properties:
   Name: DNSString
   QueryLoggingConfig:
     CloudWatchLogsLogGroupArn: ARNString
-  HostedZoneVPCs:
+  VPCs:
     VPCId: IdString
     VPCRegion: RegionString
