@@ -6,3 +6,18 @@
 #     set copy
 #     send copy to location
 #     exit
+
+from shutil import copyfile, copy
+
+import click
+
+@click.command()
+@click.argument('template')
+@click.argument('dest')
+
+def main(template, dest):
+    copy(template, dest)
+    click.echo("Done")
+
+if __name__ == "__main__":
+    main() 
