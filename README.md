@@ -50,4 +50,4 @@ It's basically scooping the foam from the top.
 
 ### Running tests
 
-        python test/test_cli.py
+        pytest test/
