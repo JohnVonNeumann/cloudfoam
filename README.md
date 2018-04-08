@@ -36,3 +36,18 @@ It's basically scooping the foam from the top.
 * And the second item hasn't been recognised, because you've created a `List`, not a list of lists. Which is what some things calls for. It all depends on the resource being called, which is why the Docs are always important.
 
 #### All resources have their original source linked to them inside the templates themselves, all content belong to their original authors. I'm merely trying to amalgamate the information in one place for people to easily consult it.
+
+
+## Codebase
+
+### Installing modules
+
+        pipenv install
+
+### Running cli tool
+
+        python cloudfoam.py AWS::EXAMPLE::Exampnet.yaml ~/code/cloudfoam/example.yaml
+
+### Running tests
+
+        python test/test_cli.py
