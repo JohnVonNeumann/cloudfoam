@@ -8,12 +8,14 @@ from cloudfoam import main
 
 
 def test_cli_copy():
+    cwd = path.realpath('.')
+    test_file = path.join(cwd, 'test.yaml')
     runner = CliRunner()
     result = runner.invoke(main,
                            ['AWS::EC2::Subnet.yaml',
-                            '/home/lw/code/open_source/cloudfoam/test.yaml'])
-    assert path.exists('/home/lw/code/open_source/cloudfoam/test.yaml')
-    remove('/home/lw/code/open_source/cloudfoam/test.yaml')
+                            test_file])
+    assert path.exists(test_file)
+    remove(test_file)
 
 
 if __name__ == "__main__":
