@@ -1,4 +1,7 @@
 # Cloudfoam
+
+[![Build Status](https://travis-ci.org/JohnVonNeumann/cloudfoam.svg?branch=master)](https://travis-ci.org/JohnVonNeumann/cloudfoam)<Paste>
+
 Like many things, sometimes we become useful enough to know how to use something, but we may forget the little things. This is a repository which just has basic resource's templated with their possible values. It's not meant to be expansive, simply to provide a reference implementation template for those who work heavily with CF.
 
 It's basically scooping the foam from the top.
