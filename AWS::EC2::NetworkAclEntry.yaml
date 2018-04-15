@@ -2,7 +2,7 @@
 
 Type: "AWS::EC2::NetworkAclEntry"
 Properties:
-	CidrBlock: CIDRString # COND  CidrBlock | Ipv6CidrBlock
+  CidrBlock: CIDRString # COND  CidrBlock | Ipv6CidrBlock
   Egress: Boolean
   Icmp: # COND REQ IF SPEC. `ICMP` FOR Protocol Attr.
   Ipv6CidrBlock: CIDRString # COND CidrBlock | Ipv6CidrBlock
